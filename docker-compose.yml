@@ -22,8 +22,9 @@ services:
     depends_on:
       - db
   prod:
-    image: .
-    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - 8081:80
     environment:
